@@ -60,7 +60,7 @@ def running():
                 if pygame.sprite.spritecollide(tank,blocks,False):
                     tank.isLand=True
             if not pygame.sprite.spritecollide(tank,blocks,False):
-                tank.isLAnd=False
+                tank.isLand=False
 
 
         exist=theBullet is not None

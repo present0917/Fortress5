@@ -37,8 +37,10 @@ def running():
         for i in range(2): #두명치 체력바 다 그려준다
             hbar[i].current = tanks[i].hp
             hbar[i].draw(screen)
-        newBullet = tanks[nowPlayer].update(pygame.key.get_pressed(),blocks)  # 키 입력을 받은대로 탱크에 보낸다.
-        if newBullet:
+
+        exist=theBullet is not None
+        newBullet = tanks[nowPlayer].update(pygame.key.get_pressed(),blocks,exist)  # 키 입력을 받은대로 탱크에 보낸다.
+        if newBullet and not exist:
             theBullet = newBullet  # 새 탄환
         
 

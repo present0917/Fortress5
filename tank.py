@@ -47,8 +47,7 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
 
     def fire(self):
         speed = [5, -10 * self.fireTime]  # 스페이스 누르는 시간 비례
-        
-        return bullet.Bullet(self.rect.center, speed)
+        return bullet.Bullet(self.rect.center, speed,self.direc)
 
 
     def update(self, keys,blocks,exist):
@@ -66,7 +65,7 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
             self.direc="R"
 
         if keys[K_SPACE]:
-            if not self.firing:
+            if not self.firing and self.isLand:
                 self.firing = True
                 self.fireTime = 0
             else:

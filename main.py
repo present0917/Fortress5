@@ -45,7 +45,15 @@ def running():
         
         
         for tank in tanks:
-            tank.flip(screen) 
+            tank.flip(screen)   #탱크 렌더링
+              # for i,tank in enumerate(tanks):  
+                #   screen.blit(tank.image, tank.rect)  #이전에는 그냥 출력했지만
+                #상황에 따라 탱크의 모양을 뒤집으며 시점을 바꾸며 렌더링
+        
+            
+            
+            
+            
         
         blocks.draw(screen)  # 블럭묶음 렌더링   
 

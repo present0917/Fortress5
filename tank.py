@@ -57,6 +57,9 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
             self.rect.y += 10
             if pygame.sprite.spritecollide(self, blocks,False):
                 self.isLand = True
+        if not pygame.sprite.spritecollide(self, blocks,False):
+                self.isLand = False
+
         if keys[K_LEFT] and self.isLand:
             self.rect.x -= self.speed
             self.direc="L"

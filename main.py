@@ -3,8 +3,17 @@ import tank
 import block
 import bullet
 import hpbar
+import map
 
 pygame.init()  # 초기화
+
+maps = {
+    "1": [(0, 300),(100, 350),(200, 400),(300, 450),(400, 450),(500, 400),(600, 350),(700, 300)],
+    "2": [(100,300),(700,300)],
+    "3": [(100, 450), (200, 500),(600, 450), (700, 400)]
+}
+#맵구조 설계
+
 
 backgroundColor = (255, 255, 255)  # 배경색 지정
 background = [800, 600]  # 배경 해상도
@@ -17,13 +26,16 @@ hbar = [hpbar.Hpbar(10, 10, 100), hpbar.Hpbar(800 - 210, 10, 100)] #각 플레�
 nowPlayer=0 #0번플레이어부터 시작
 blocks = pygame.sprite.Group()  # 스프라이트의 묶음으로
 
-for _ in range(10):  # 테스트용 10개만
-    block_obj = block.Block()
-    blocks.add(block_obj)
+
 theBullet = None  # 탄환변수
 
 def running():
 
+    themap = map.selectMap(screen, maps) #고른맵을 반환받아
+    for i in maps[themap]: #반환받은 숫자로 맵중에골라서
+        blockObj = block.Block(i)
+        blocks.add(blockObj) #맵에따라 블럭배치
+    
     global done, tanks, theBullet,nowPlayer  # 캐릭터와 게임오버여부,탄환 전역변수로
     while not done:
         clock.tick(30)  # 30프레임

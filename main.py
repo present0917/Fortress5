@@ -15,6 +15,7 @@ maps = {
 #맵구조 설계
 
 
+font = pygame.font.Font(None, 100) #기본폰트, 크기
 backgroundColor = (255, 255, 255)  # 배경색 지정
 background = [800, 600]  # 배경 해상도
 screen = pygame.display.set_mode(background)  # screen을 지정한 해상도로
@@ -86,6 +87,24 @@ def running():
                 if theBullet:  # 아직탄환 날라가는중이면
                     screen.blit(theBullet.image, theBullet.rect)  # 렌더링
                 
+
+
+        
+
+        if not tanks[0].alive:  #죽으면
+            text = font.render("Player2 Win", True, (0, 0, 0))  #승리문구
+            screen.blit(text, (100, 100))  #텍스트렌더링
+            pygame.display.update()  #렌더링
+            pygame.time.wait(5000)  #5초동안 보여주다가
+            break  #게임종료
+
+        elif not tanks[1].alive: 
+            text = font.render("Player1 Win", True, (0, 0, 0)) 
+            screen.blit(text, (100, 100))
+            pygame.display.update() 
+            pygame.time.wait(2000) 
+            break 
+
         pygame.display.update()
 
 running()

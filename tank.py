@@ -34,6 +34,7 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
         self.firing = False
         self.fireTime = 0
         self.theBullet=None #발사된총알
+        self.alive=True #살아있는지
 
     def flip(self, surface):
         image = self.image
@@ -86,3 +87,6 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
         self.hp -= 40
         if self.hp <= 0:
             self.kill()
+
+    def kill(self):
+        self.alive = False

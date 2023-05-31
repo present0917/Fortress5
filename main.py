@@ -46,7 +46,10 @@ def running():
             if event.type == pygame.QUIT:
                 done = True
 
+        pygame.draw.circle(screen,(0, 0, 0),(tanks[nowPlayer].rect.x + 50, tanks[nowPlayer].rect.y - 10),10)
+        #턴플레이어위에 점하나띄운다.
 
+        
         for i in range(2): #두명치 체력바 다 그려준다
             hbar[i].current = tanks[i].hp
             hbar[i].draw(screen)

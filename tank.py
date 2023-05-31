@@ -40,9 +40,14 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
         if self.direc == "L":
             image = pygame.transform.flip(image, True, False)
         surface.blit(image, self.rect) #방향따라서 렌더링
-    
+        
+        if self.firing: #발사 게이지, 발사중이면 탱크 위에 게이지가 나온다.
+            pygame.draw.rect(surface,(255,0,0), (self.rect.x, self.rect.y - 10, 100 * self.fireTime / 3, 5)) 
+            
+
     def fire(self):
         speed = [5, -10 * self.fireTime]  # 스페이스 누르는 시간 비례
+        
         return bullet.Bullet(self.rect.center, speed)
 
 

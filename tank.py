@@ -54,6 +54,10 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
     def update(self, keys,blocks,exist):
         if exist:
             return
+        if self.rect.y>600:
+            self.hp-=20
+        if self.hp <= 0:
+            self.kill()
         if keys[K_LEFT] and self.isLand:
             self.rect.x -= self.speed
             self.direc="L"
@@ -78,8 +82,7 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
             
     def hiten(self):  # 탱크가 탄환에 맞았을 때 체력을 깎는 함수입니다.
         self.hp -= 40
-        if self.hp <= 0:
-            self.kill()
+        
 
     def kill(self):
         self.alive = False

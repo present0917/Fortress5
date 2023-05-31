@@ -51,6 +51,15 @@ def running():
             hbar[i].current = tanks[i].hp
             hbar[i].draw(screen)
 
+        for tank in tanks:
+            if not tank.isLand:
+                tank.rect.y+=10
+                if pygame.sprite.spritecollide(tank,blocks,False):
+                    tank.isLand=True
+            if not pygame.sprite.spritecollide(tank,blocks,False):
+                tank.isLAnd=False
+
+
         exist=theBullet is not None
         newBullet = tanks[nowPlayer].update(pygame.key.get_pressed(),blocks,exist)  # 키 입력을 받은대로 탱크에 보낸다.
         if newBullet and not exist:

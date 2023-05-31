@@ -3,8 +3,8 @@
 <img alt="Pyhton" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=black"/> 
 
 ## pygame 으로 작성한 2인용 포트리스 게임입니다. 
-### 터미널에서 pip install pygame 입력 하여 pygame 라이브러리 설치 후 
-### main.py에서 F5로 실행해서 사용해주세요<br>
+### 터미널에서 pip install pygame 입력 하여 pygame 라이브러리 설치 후 (오류 발생 시 pip install pygame --pre)
+### main.py에서 F5로 실행해서 사용해주세요<br> 
 
 
 <br>

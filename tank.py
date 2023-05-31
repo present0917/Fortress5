@@ -23,10 +23,10 @@ class Tank(pygame.sprite.Sprite): #스프라이트화
             self.direc="L" #플레이어에 따른 초기방향설정    
 
         if player == 1:
-            self.rect.x = 100 
+            self.rect.x = 0
         else:
             self.rect.x=700  # 탱크위치 플레이어따라 선택
-        self.rect.y = 100
+        self.rect.y =0
         self.speed = 5
         self.hp=100 #체력초기설정
         self.power=0

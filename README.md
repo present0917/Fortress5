@@ -34,7 +34,7 @@ Pull Request 기준
 
 
 # 오류발생시
-pip install pygame --pre 명령어로 설치 시도 해주세요.
-python을 3.10 버전으로 다운그레이드 해주세요.
+pip install pygame --pre 명령어로 설치 시도 해주세요.<br>
+python을 3.10 버전으로 다운그레이드 해주세요.<br>
 python -m pip install -U pygame==2.4.0 명령어로 패키지 설치 시도 해주세요.
 
